@@ -9,7 +9,7 @@ syntax = "proto2";
 import "proto/gtfs-realtime.proto";
 
 option java_package = "com.google.transit.realtime";
-package transit_realtime;
+package transit_rt;
 option go_package = "github.com/jamespfennell/gtfs/proto";
 
 // Mercury extensions for the Feed Header
@@ -65,7 +65,7 @@ message MercuryAlert {
   optional string clone_id = 13;
 }
 
-extend transit_realtime.Alert {
+extend transit_rt.Alert {
  optional MercuryAlert mercury_alert = 1001;
 }
 
@@ -121,6 +121,6 @@ message MercuryEntitySelector {
   required string sort_order = 1;
 }
 
-extend transit_realtime.EntitySelector {
+extend transit_rt.EntitySelector {
  optional MercuryEntitySelector mercury_entity_selector = 1001;
 }
